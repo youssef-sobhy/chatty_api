@@ -1,0 +1,6 @@
+messages_reindex:
+  cron: '1 0 * * *' # Runs daily at 12:01 am
+  class: 'MessagesReindexWorker'
+  queue: searchkick
+  args:
+    class_name: 'Message'
