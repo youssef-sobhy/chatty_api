@@ -2,9 +2,17 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'active_model_serializers'
+gem 'connection_pool', '~> 2.2.3'
+# gem 'command_service_object', '~> 0.6.3'
+gem 'dotenv-rails', '~> 2.7.6'
 gem 'rails', '~> 5.0.0'
+gem 'redis-rails', '~> 5.0.2'
+gem 'searchkick', '~> 4.4.2'
+gem 'sidekiq-cron', '~> 1.1'
+gem 'sneakers', '~> 2.11.0'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.18', '< 0.5'
+gem 'mysql2', '~> 0.5.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -23,6 +31,7 @@ gem 'puma', '~> 3.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 4.0.2'
 end
 
 group :development do
@@ -30,6 +39,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'shoulda-matchers', '~> 4.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
